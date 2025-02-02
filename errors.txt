@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 366: 'passtextbutton' is not a keyword argument or valid child of the hbox statement.
+    passtextbutton _("Comenzar") action Start()
+                  ^
+
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Sat Jul  6 21:25:22 2024
