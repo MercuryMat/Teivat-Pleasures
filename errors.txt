@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 366: 'passtextbutton' is not a keyword argument or valid child of the hbox statement.
-    passtextbutton _("Comenzar") action Start()
-                  ^
+File "game/Chapters/amberchapte.rpy", line 5: expected 'label_name' not found.
+    call 
+        ^
 
-Ren'Py Version: Ren'Py 8.2.1.24030407
-Sat Jul  6 21:25:22 2024
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Mon Feb  3 01:24:57 2025

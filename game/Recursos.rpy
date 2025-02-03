@@ -35,5 +35,10 @@ image intro5 = "intro/intro5.jpg"
 
 #paisajes
 
-image PlayaN = "Backgrounds/playa_nocturna.png"
-image PlayaN1 = "Backgrounds/Playa_Nocturna1.jpg"
+image PlayaN = im.Scale("Backgrounds/playa_nocturna.png", config.screen_width, config.screen_height)
+image PlayaN1 = im.Scale("Backgrounds/Playa_Nocturna1.jpg", config.screen_width, config.screen_height)
+image Bridge = im.Scale("Backgrounds/bridge.jpg", config.screen_width, config.screen_height)
+image Diary = im.Scale("Backgrounds/klee4.jpg", config.screen_width, config.screen_height)
+
+#Characters
+image Amber = "characters/amberco.png"

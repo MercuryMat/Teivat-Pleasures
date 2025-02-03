@@ -1,81 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('intro1.jpg') at 0x00000000051584f0>:
-  File "game/script.rpy", line 41, in script
-    ae "¿Que fue lo que sucedio?"
-  File "renpy/common/000window.rpy", line 122, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 70, in _window_show
-    renpy.with_statement(trans)
-OSError: Couldn't find file 'intro1.jpg'.
+While running game code:
+  File "game/script.rpy", line 9, in script call
+    call tryscene
+  File "game/Chapters/amberchapte.rpy", line 5, in script call
+    call charlaamb
+  File "game/Chapters/amberchapte.rpy", line 16, in script
+    scene Diary xfill True yfill True with flashbulb  # Se asegura que el fondo se muestre correctamente
+Exception: Image 'Diary' does not accept attributes 'xfill True yfill True'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 41, in script
-    ae "¿Que fue lo que sucedio?"
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\ast.py", line 2557, in execute
-    Say.execute(self)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\ast.py", line 583, in execute
-    statement_name(stmt_name)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\ast.py", line 52, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 122, in _window_auto_callback
-    _window_show(auto=True)
-  File "renpy/common/000window.rpy", line 70, in _window_show
-    renpy.with_statement(trans)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\exports.py", line 1781, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\core.py", line 1548, in do_with
-    return self.interact(trans_pause=True,
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\core.py", line 2165, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\core.py", line 2818, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\core.py", line 1352, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\transition.py", line 383, in render
-    bottom = render(self.old_widget, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\transform.py", line 957, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\image.py", line 513, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\image.py", line 316, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\im.py", line 626, in render
-    return cache.get(self, render=True)
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\im.py", line 309, in get
-    surf = image.load()
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\im.py", line 761, in load
-    raise e
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\display\im.py", line 711, in load
-    filelike = renpy.loader.load(self.filename, directory="images")
-  File "C:\Users\yeiso\Documents\renpy-8.2.1-sdk\renpy\loader.py", line 672, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'intro1.jpg'.
+  File "game/script.rpy", line 9, in script call
+    call tryscene
+  File "game/Chapters/amberchapte.rpy", line 5, in script call
+    call charlaamb
+  File "game/Chapters/amberchapte.rpy", line 16, in script
+    scene Diary xfill True yfill True with flashbulb  # Se asegura que el fondo se muestre correctamente
+  File "C:\Users\MercuryMat\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 1251, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\MercuryMat\Documents\renpy-8.3.4-sdk\renpy\ast.py", line 1080, in show_imspec
+    renpy.config.show(name,
+  File "C:\Users\MercuryMat\Documents\renpy-8.3.4-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "C:\Users\MercuryMat\Documents\renpy-8.3.4-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "C:\Users\MercuryMat\Documents\renpy-8.3.4-sdk\renpy\display\displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "C:\Users\MercuryMat\Documents\renpy-8.3.4-sdk\renpy\display\displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'Diary' does not accept attributes 'xfill True yfill True'.
 
-Windows-10-10.0.22621 AMD64
-Ren'Py 8.2.1.24030407
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.4.24120703
  
-Thu Jul 11 18:16:58 2024
+Mon Feb  3 01:28:58 2025
