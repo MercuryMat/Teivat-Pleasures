@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Chapters/amberchapte.rpy", line 5: expected 'label_name' not found.
-    call 
-        ^
+File "game/screens.rpy", line 387: style property text_color is not known.
+    text_color "#FFFFFF"            
+              ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Mon Feb  3 01:24:57 2025
+Mon Feb  3 14:09:23 2025

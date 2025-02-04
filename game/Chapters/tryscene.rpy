@@ -1,5 +1,5 @@
 label tryscene:
-    scene PlayaN1
+    scene Bridge
 
     show screen selectable_characters
 

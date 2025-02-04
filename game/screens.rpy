@@ -136,7 +136,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox 1.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -246,17 +246,13 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+            xalign 0.8
+            yalign 0.98
 
-            textbutton _("Atrás") action Rollback()
-            textbutton _("Historial") action ShowMenu('history')
+         
             textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Guardar") action ShowMenu('save')
-            textbutton _("Guardar R.") action QuickSave()
-            textbutton _("Cargar R.") action QuickLoad()
-            textbutton _("Prefs.") action ShowMenu('preferences')
+          
 
 
 ## Este código asegura que la pantalla 'quick_menu' se muestra en el juego,
@@ -348,6 +344,7 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+
 screen main_menu():
 
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
@@ -362,35 +359,40 @@ screen main_menu():
     ## La sentencia 'use' incluye otra pantalla dentro de esta. El contenido
     ## real del menú principal está en la pantalla de navegación.
     #use navigation
-    
-    
-    
-    
-  
 
-    hbox:
-            xalign 0.5  # Centra el hbox horizontalmente
-            ypos 950    # Posición vertical de los botones
-            spacing 40  # Espacio entre cada botón
+    vbox:
+        xalign 0.95  # Alinea los botones a la derecha
+        yalign 0.3   # Posiciona los botones más arriba en la pantalla
+        spacing 20   # Espacio entre cada botón
 
-            imagebutton idle "jugar_idle.png" hover "jugar_hover.png" focus_mask True action Start()
-            imagebutton idle "cargar_idle.png" hover "cargar_hover.png" focus_mask True action ShowMenu("load")
-            imagebutton idle "opciones_idle.png" hover "opciones_hover.png" focus_mask True action ShowMenu("preferences")
-            imagebutton idle "informacion_idle.png" hover "informacion_hover.png" focus_mask True action ShowMenu("about")
-            imagebutton idle "salir_idle.png" hover "salir_hover.png" focus_mask True action Quit(confirm=not main_menu)
+        textbutton "Comenzar" action Start() style "menu_button"
+        textbutton "Cargar" action ShowMenu("load") style "menu_button"
+        textbutton "Opciones" action ShowMenu("preferences") style "menu_button"
+        textbutton "Información" action ShowMenu("about") style "menu_button"
+        textbutton "Salir" action Quit(confirm=not main_menu) style "menu_button"
+
+## Definir estilo para los botones del menú principal
+style menu_button is default:
+    size 40                         # Tamaño del texto
+    xsize 300                       # Ancho fijo
+    ysize 60                        # Altura fija
+    background "#FFFFFF15"          # Fondo blanco con opacidad del 15%
+    padding (10, 20)                # Espaciado interno
+    text_align 0.5                  # Texto centrado horizontalmente
+    hover_background "#FFFFFF30"    # Fondo más opaco al pasar el cursor
+    font "fonts/HYWenHei.ttf"       # Aplicar la fuente HYWenHei
 
 
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
+## Definir estilo para los botones del menú principal
+style menu_button is default:
+    size 40                         # Tamaño del texto
+    xsize 300                       # Ancho fijo
+    ysize 60                        # Altura fija
+    background "#FFFFFF15"          # Fondo blanco con opacidad del 15%
+    padding (10, 20)                # Espaciado interno
+    text_align 0.5                  # Texto centrado horizontalmente
+    hover_background "#FFFFFF30"    # Fondo más opaco al pasar el cursor
+    font "HYWenHei"
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
